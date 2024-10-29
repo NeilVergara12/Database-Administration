@@ -35,16 +35,25 @@ if (!$result) {
       width: 100%; 
       margin: 0 auto; 
     }
+
+    .navbar {
+      background-color: #bdbce5; 
+      color: Black;
+      margin-bottom: 50px;
+      box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+    }
   </style>
   
 </head>
 
 <body>
-  <div class="container-fluid shadow mb-5 p-3">
-    <h1>Straw Hat Feed</h1>
-  </div>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <h1>Straw Hat Feed</h1>
+    </div>
+  </nav>
 
-  <div class="container"> <!-- container to hold cards -->
+  <div class="container"> <!-- container for cards -->
     <div class="row">
       <?php if (mysqli_num_rows($result) > 0): ?>
         <?php while ($post = mysqli_fetch_assoc($result)): ?>
