@@ -1,7 +1,7 @@
 <?php
 include("connect.php");
 
-// Fetch posts from the database
+
 $query = "
   SELECT posts.postID, userinfo.firstName, userinfo.lastName, posts.content, posts.dateTime, posts.privacy, posts.isDeleted, cities.name AS city, provinces.name AS province
   FROM posts
@@ -14,7 +14,7 @@ $query = "
 $result = mysqli_query($conn, $query);
 
 if (!$result) {
-    die("Query failed: " . mysqli_error($conn)); // Check for query errors
+    die("Query failed: " . mysqli_error($conn)); 
 }
 
 ?>
@@ -26,10 +26,18 @@ if (!$result) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nyelibook.com</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
+
+  <style>
+    body {
+    background-color: #b3b2fd;
+    }
+    
+  </style>
+  
   <div class="container-fluid shadow mb-5 p-3">
     <h1>Straw Hat Feed</h1>
   </div>
